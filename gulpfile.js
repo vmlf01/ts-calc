@@ -29,7 +29,9 @@ gulp.task('build', ['clean', 'lint'], function () {
 
 gulp.task('test', ['build'], () => {
     return gulp.src('lib/test/**/*.js', { read: false })
-        .pipe(mocha());
+        .pipe(mocha({
+            istanbul: true
+        }));
 });
 
 gulp.task('test:watch', ['test'], () => {
