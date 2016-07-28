@@ -2,7 +2,7 @@ const path = require('path');
 const del = require('del');
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const mocha = require('gulp-mocha');
+const mocha = require('gulp-spawn-mocha');
 const tslint = require('gulp-tslint');
 
 gulp.task('clean', () => {

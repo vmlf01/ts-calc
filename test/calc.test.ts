@@ -1,4 +1,4 @@
-import * as should from 'should';
+import 'should';
 
 import Calc from '../src/calc';
 
@@ -6,7 +6,6 @@ describe('Calc', () => {
     describe('isEvent', () => {
         it('should return true for 0', () => {
             const result = Calc.isEven(0);
-            should.exist(result);
             result.should.be.true();
         });
 
