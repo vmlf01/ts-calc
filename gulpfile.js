@@ -3,12 +3,23 @@ const del = require('del');
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const mocha = require('gulp-mocha');
+const tslint = require('gulp-tslint');
 
 gulp.task('clean', () => {
     return del('lib/**/*');
 });
 
-gulp.task('build', ['clean'], function () {
+gulp.task('lint', () => {
+    return gulp.src(['src/**/*.ts', 'test/**/*.ts'])
+        .pipe(tslint())
+        .pipe(tslint.report({
+            emitError: false,
+            summarizeFailureOutput: true,
+            reportLimit: 20
+        }));
+});
+
+gulp.task('build', ['clean', 'lint'], function () {
     const tsProject = ts.createProject(path.join(__dirname, 'tsconfig.json'));
 
     return tsProject.src()
