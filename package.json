@@ -1,0 +1,26 @@
+{
+  "name": "ts-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "test": "gulp test",
+    "test:watch": "gulp test:watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-typescript": "^2.13.6",
+    "mocha": "^2.5.3",
+    "typescript": "^1.8.10"
+  }
+}
